@@ -1,6 +1,6 @@
 # 🌦️ Weather Dashboard (React + Vite)
 
-A modern, fast, and responsive Weather Dashboard built using **React 18 + Vite**, designed to display real-time weather data, hourly forecasts, and historical insights with a clean UI.
+A modern, fast, and responsive Weather Dashboard built using **React 18 + Vite**, designed to display real-time weather data, hourly forecasts, air quality metrics, and historical insights with a clean UI.
 
 ---
 
@@ -8,82 +8,66 @@ A modern, fast, and responsive Weather Dashboard built using **React 18 + Vite**
 
 * 🌡️ **Current Weather**
 
-  * Temperature
+  * Temperature (Current, Min, Max)
   * Humidity
   * Precipitation
-  * Min / Max Temperature
-  * Weather condition icons
+  * Wind Speed
+  * Sunrise & Sunset
 
 * ⏱️ **Hourly Forecast (24 Hours)**
 
   * Temperature trends
-  * Weather conditions
-  * Wind speed & visibility
-
-* 📊 **Historical Weather**
-
-  * Date range selection
-  * Temperature trends (charts)
-  * Precipitation & wind insights
+  * Humidity
+  * Precipitation
+  * Wind Speed
+  * Visibility
 
 * 🌫️ **Air Quality Index**
 
+  * AQI (European Index)
   * PM2.5, PM10
   * CO, NO₂, SO₂
-  * AQI visualization
+
+* 📊 **Historical Weather**
+
+  * Date range selection (up to 2 years)
+  * Temperature trends (Min, Max, Mean)
+  * Precipitation & wind data
 
 * 🌙 **Dark Mode**
 
-  * Smooth toggle using theme provider
+* 📱 **Fully Responsive UI**
 
-* ⚡ **Performance Optimized**
-
-  * API caching using TanStack Query
-  * Fast load time (<500ms target)
-
-* 📱 **Fully Responsive**
-
-  * Mobile, tablet, and desktop friendly
+* ⚡ **Fast Performance with caching**
 
 ---
 
 ## 🛠️ Tech Stack
 
 * **Frontend:** React 18 + Vite
-* **State & Data Fetching:** TanStack Query
-* **UI Library:** shadcn/ui
+* **Data Fetching:** TanStack Query
+* **UI Components:** shadcn/ui
 * **Charts:** Recharts
 * **Icons:** lucide-react
 * **Styling:** Tailwind CSS
-* **Theme:** next-themes
 
 ---
 
 ## 📁 Project Structure
 
-```
+```bash
 src/
-│
 ├── components/
-│   ├── ui/                # Reusable UI components (shadcn)
-│   ├── weather/           # Weather related components
-│   │   ├── weather-summary.jsx
-│   │   ├── hourly-charts.jsx
-│   │   ├── historical-charts.jsx
-│   │   ├── air-quality-display.jsx
-│   │   └── data-range-picker.jsx
-│   ├── provider.jsx
-│   └── theme-toggle.jsx
+│   ├── ui/
+│   ├── weather/
+│   ├── charts/
+│   ├── common/
+│   └── provider.jsx
 │
 ├── lib/
-│   ├── hooks/             # Custom hooks (API logic)
-│   │   ├── useWeather.js
-│   │   ├── useHistoricalWeather.js
-│   │   ├── useAirQuality.js
-│   │   └── useGeolocation.js
-│   ├── utils/             # Utility functions
-│   │   ├── api.js
-│   │   └── weather.js
+│   ├── hooks/
+│   ├── utils/
+│   └── api.js
 │
 ├── pages/
 │   ├── Home.jsx
@@ -95,11 +79,11 @@ src/
 
 ---
 
-## 🌐 API Used
+## 🌐 APIs Used
 
 * Open-Meteo Weather API
-* Air Quality API
-* Historical Weather API
+* Open-Meteo Air Quality API
+* Open-Meteo Historical API
 
 ---
 
@@ -132,55 +116,60 @@ http://localhost:5173
 
 ---
 
-## 📦 Build for Production
+## 🚀 Deployment
 
-```bash
-npm run build
-```
+This project is deployed using **Vercel** for fast and reliable hosting.
 
----
+### 🔗 Live Demo
 
-## 🧠 Architecture Overview
+👉 https://weather-dashboard-pearl-three.vercel.app/
 
-* **Custom Hooks** handle all API logic
+### 🧩 Deployment Steps
 
-* **TanStack Query** manages caching:
+1. Push your project to GitHub
+2. Go to Vercel and login with GitHub
+3. Import your repository
+4. Configure build settings:
 
-  * Current Weather → 5 min
-  * Hourly Forecast → 30 min
-  * Historical Data → 1 hour
-
-* **Component-based design**
-
-  * Reusable UI
-  * Clean separation of concerns
+   * Build Command: `npm run build`
+   * Output Directory: `dist`
+5. Click **Deploy**
 
 ---
 
-## 🎯 Performance Optimizations
+## ⚡ Performance Optimizations
 
-* API caching (reduces network calls)
-* Lazy loading of components
-* Efficient state management
+* API caching with TanStack Query
 * Minimal re-renders
+* Optimized data fetching
+* Fast initial load (<500ms target)
 
 ---
 
-## 📸 UI Highlights
+## 🎨 UI Highlights
 
-* Clean card-based layout
-* Tab-based navigation (Current / Hourly / Historical)
-* Smooth transitions
-* Modern dashboard look
+* Modern dashboard layout
+* Responsive grid system
+* Card-based design
+* Interactive charts
+* Clean typography
+
+---
+
+## 🧠 Architecture
+
+* Custom hooks for API handling
+* Separation of concerns (data vs UI)
+* Modular component structure
 
 ---
 
 ## 🧩 Future Improvements
 
-* 📍 Search by city
-* ⭐ Favorite locations
-* 🌍 Multi-location support
-* 📊 More advanced analytics
+* Location search
+* Multiple cities support
+* Advanced analytics
+* Notifications
 
 ---
 
@@ -196,4 +185,4 @@ This project is open-source and free to use.
 
 ---
 
-🔥 *Built for performance, scalability, and clean UI experience.*
+🔥 *Built with focus on performance, scalability, and clean UI experience.*
